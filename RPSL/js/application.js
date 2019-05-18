@@ -13,13 +13,6 @@ let ties = 0;
 let computerPoints = 0;
 let playerPoints = 0;
 
-game.forEach( move => move.addEventListener("click",event => {
-  let playerSelection = event.target.name;
-  let computerSelection = computerPlay();
-  playRound(playerSelection,computerSelection);
-})
-);
-
 const computerPlay = function(){
   let hand = {
     0: "paper",
@@ -36,7 +29,6 @@ const computerPlay = function(){
 
 const playRound = function(playerSelection, computerSelection) {
   let result;
-
   round++;
   roundText.textContent = `round: ${round}`;
 
@@ -65,7 +57,6 @@ const playRound = function(playerSelection, computerSelection) {
     result = "win"
   } else if (playerSelection === "rock" && computerSelection === "scissors") {
     result = "win"
-
   } else  {
     result = "lose";
   }
