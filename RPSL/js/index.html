@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Rock Paper Scissors -- Game</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="../css/style.css">
+</head>
+
+<body>
+  <header>
+    <h1>Rock Paper Scissors Lizard Spock!</h1>
+  </header>
+  <main>
+    <div id="hands" aria-live="polite" aria-busy="true"></div>
+    <section id="moves-container">
+      <div class="move-box"><input type="image" name="rock" src="../images/rock.png" width="150" height="150" alt="rock"></div>
+      <div class="move-box"><input type="image" name="paper" src="../images/paper.png" width="150" height="150" alt="paper"></div>
+      <div class="move-box"><input type="image" name= "scissors" src="../images/scissors.png" width="150" height="150" alt="scissors"></div>
+      <div class="move-box"><input type="image" name= "spock" src="../images/spock.png" width="150" height="150" alt="spock"></div>
+      <div class="move-box"><input type="image" name= "lizard" src="../images/lizard.png" width="150" height="150" alt="lizard"></div>
+    </section>
+    <section id="gameStats-container">
+      <h3 id="round">Round:</h3>
+      <div class="player-box" id="human-player">
+        <p>You:</p>
+        <div class="score-box">0</div>
+         <div id ="final-score"></div>
+        <p id="player-selection"></p>
+      </div>
+      <div class="player-box" id="pc-player">
+        <p>Computer Player :</p>
+        <div id = "ties-text">Ties:</div>
+        <div class = "ties-score">0</div>
+        <div class="score-box">0</div>
+         <div id ="final-score"></div>
+        <p id="computer-selection"></p>
+      </div>
+    </section>
+    <section id="results-container"></section>
+  </main>
+  <!-- Load in the data -->
+  <script src="application.js"></script>
+</body>
