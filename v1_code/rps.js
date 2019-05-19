@@ -3,7 +3,7 @@
 	var computerSelection;
 	var playerSelection;
 	function computerPlay(){
-		var hand = ["rock" , "paper" , "scissors"];
+		var hand = ["rock" , "paper" , "scissors, izard, spock"];
 		var randomIndex = Math.floor(Math.random() * 3);
 		return hand[randomIndex];
 	}
@@ -63,7 +63,7 @@
 		}  document.write("</br><b> Final Score:</b> " +" You  "+
 		playerPoints+"<b> computer</b> " + compPoints +  " Ties: "+ ties);
 	}
-	
+
 	function checkRound() {
 		var roundIndex = 1;
 		while(roundIndex <= 5)  {

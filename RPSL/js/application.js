@@ -13,13 +13,6 @@ let ties = 0;
 let computerPoints = 0;
 let playerPoints = 0;
 
-game.forEach( move => move.addEventListener("click",event => {
-  let playerSelection = event.target.name;
-  let computerSelection = computerPlay();
-  playRound(playerSelection,computerSelection);
-})
-);
-
 const computerPlay = function(){
   let hand = {
     0: "paper",
@@ -36,56 +29,53 @@ const computerPlay = function(){
 
 const playRound = function(playerSelection, computerSelection) {
   let result;
-
   round++;
   roundText.textContent = `round: ${round}`;
-
   playerSelectionText.textContent = `you selected ${playerSelection}`;
 
   if (playerSelection === computerSelection ){
     result = "tie";
     ties++;
-  }  else if (playerSelection === "scissors" && computerSelection === "paper"){
-    result = "win"
-  } else if (playerSelection === "paper" && computerSelection === "rock") {
-    result = "win"
-  } else if (playerSelection === "rock" && computerSelection === "lizard") {
-    result = "win"
-  } else if (playerSelection === "lizard" && computerSelection === "spock") {
-    result = "win"
-  } else if (playerSelection === "spock" && computerSelection === "scissors") {
-    result = "win"
-  } else if (playerSelection === "scissors" && computerSelection === "lizard") {
-    result = "win"
-  } else if (playerSelection === "lizard" && computerSelection === "paper") {
-    result = "win"
-  } else if (playerSelection === "paper" && computerSelection === "spock"){
-    result = "win"
-  } else if (playerSelection === "spock" && computerSelection === "rock") {
-    result = "win"
-  } else if (playerSelection === "rock" && computerSelection === "scissors") {
-    result = "win"
-
-  } else  {
-    result = "lose";
+    resultsText.textContent = `Tie!`;
   }
+  else if
+  (playerSelection === "scissors" && computerSelection === "paper" ||
+  playerSelection === "paper" && computerSelection === "rock" ||
+  playerSelection === "rock" && computerSelection === "lizard" ||
+  playerSelection === "lizard" && computerSelection === "spock" ||
+  playerSelection === "spock" && computerSelection === "scissors" ||
+  playerSelection === "scissors" && computerSelection === "lizard" ||
+  playerSelection === "lizard" && computerSelection === "paper" ||
+  playerSelection === "paper" && computerSelection === "spock" ||
+  playerSelection === "spock" && computerSelection === "rock" ||
+  playerSelection === "rock" && computerSelection === "scissors" ){
+    if (result = "win"){
+      playerPoints++;
+      playerScoreText.textContent = `${playerPoints}`;
+      resultsText.textContent = `${playerSelection} beats ${computerSelection}`;
 
-  if(result === "tie"){
-    resultsText.textContent = `it's a tie!`;
-    console.log(ties)
+    }
+    if (result = "lose"){
+      computerPoints++;
+      computerScoreText.textContent = `${computerPoints}`;
+      resultsText.textContent = `${computerSelection} beats ${playerSelection}`;
+    }
   }
+  // if(result === "tie"){
+  //   resultsText.textContent = `Tie!`;
+  // }
+  //
+  // if(result === "win"){
+  //   resultsText.textContent = `${playerSelection} beats ${computerSelection}`;
+  //
+  //   // playerScoreText.textContent = `${playerPoints} `;
+  // }
+  // if(result === "lose"){
+  //   resultsText.textContent = `${computerSelection} beats ${playerSelection}`;
+  //
+  //   computerScoreText.textContent = `${computerPoints} `;
+  // }
 
-  if(result === "win"){
-    resultsText.textContent = `you win!, ${playerSelection} beats ${computerSelection}`;
-    playerPoints++;
-    playerScoreText.textContent = `${playerPoints} `;
-  }
-
-  if(result === "lose"){
-    resultsText.textContent = `you lose!, ${computerSelection} beats ${playerSelection}`;
-    computerPoints++;
-    computerScoreText.textContent = `${computerPoints} `;
-  }
   if(playerPoints == 5){
     finalscore.textContent = `Total Rounds: ${round}, Ties: ${ties} YOU WIN. Congratulations!`
     resetScore();
@@ -94,21 +84,65 @@ const playRound = function(playerSelection, computerSelection) {
     finalscore.textContent = `Total Rounds: ${round}, Ties: ${ties} SORRY - YOU LOSE. Hard Luck`;
     resetScore();
   }
+}
+//
+// } else if (playerSelection === "paper" && computerSelection === "rock") {
+//   result = "win"
+// } else if (playerSelection === "rock" && computerSelection === "lizard") {
+//   result = "win"
+// } else if (playerSelection === "lizard" && computerSelection === "spock") {
+//   result = "win"
+// } else if (playerSelection === "spock" && computerSelection === "scissors") {
+//   result = "win"
+// } else if (playerSelection === "scissors" && computerSelection === "lizard") {
+//   result = "win"
+// } else if (playerSelection === "lizard" && computerSelection === "paper") {
+//   result = "win"
+// } else if (playerSelection === "paper" && computerSelection === "spock"){
+//   result = "win"
+// } else if (playerSelection === "spock" && computerSelection === "rock") {
+//   result = "win"
+// } else if (playerSelection === "rock" && computerSelection === "scissors") {
+//   result = "win"
+// } else  {
+//   result = "lose";
+// }
 
-  function resetScore(){
-    round = 0;
-    ties = 0;
-    computerPoints = 0;
-    playerPoints = 0;
-    // roundText.textContent = `round: ${round}`;
-    // playerScoreText.textContent = `${playerPoints}`;
-    computerScoreText.textContent = `${computerPoints}`;
-    resultsText.textContent = ``;
-    playerSelectionText.textContent = ``;
-    computerSelectionText.textContent = ``;
+// if(result === "tie"){
+//   resultsText.textContent = `it's a tie!`;
+//   console.log(ties)
+// }
+//
+// if(result === "win"){
+//   resultsText.textContent = `you win!, ${playerSelection} beats ${computerSelection}`;
+//   playerPoints++;
+//   playerScoreText.textContent = `${playerPoints} `;
+// }
 
-  }
+//
+// if(playerPoints == 5){
+//   finalscore.textContent = `Total Rounds: ${round}, Ties: ${ties} YOU WIN. Congratulations!`
+//   resetScore();
+// }
+// if(computerPoints == 5){
+//   finalscore.textContent = `Total Rounds: ${round}, Ties: ${ties} SORRY - YOU LOSE. Hard Luck`;
+//   resetScore();
+// }
 
-
+function resetScore(){
+  round = 0;
+  ties = 0;
+  computerPoints = 0;
+  playerPoints = 0;
+  // roundText.textContent = `round: ${round}`;
+  // playerScoreText.textContent = `${playerPoints}`;
+  computerScoreText.textContent = `${computerPoints}`;
+  resultsText.textContent = ``;
+  playerSelectionText.textContent = ``;
+  computerSelectionText.textContent = ``;
 
 }
+
+
+
+// }
