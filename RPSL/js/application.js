@@ -30,10 +30,8 @@ const computerPlay = function(){
 
 const playRound = function(playerSelection, computerSelection) {
   let result;
-
   round++;
   roundText.textContent = `round: ${round}`;
-
   playerSelectionText.textContent = `you selected ${playerSelection}`;
 
   if (playerSelection === computerSelection ){
@@ -67,9 +65,8 @@ const playRound = function(playerSelection, computerSelection) {
     resultsText.textContent = `it's a tie!`;
     console.log(ties)
   }
-  // var userChoice = choice.id;
-  if(result === "win"){
 
+  if(result === "win"){
     resultsText.style.color="black ";
     gamestats.style.background="linear-gradient(green, #016c)";
     setTimeout(function(){gamestats.style.background ="";},1000);
