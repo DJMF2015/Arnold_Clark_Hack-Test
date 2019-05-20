@@ -112,25 +112,13 @@ header {
 .move-box input:focus{
     outline: none;
 }
-<style>
 
-
-
-/*
-/*reset default settings
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-/*global
-?
-body{
+/* body{
     height: 100vh;
     background-color: aquamarine;
-    border: 10px solid #72cbcb;
-}
-p{
-    margin: 15px;
-}
+    border: 5px solid #72cbcb;
+} */
+
+<style>
+
 /*header*/

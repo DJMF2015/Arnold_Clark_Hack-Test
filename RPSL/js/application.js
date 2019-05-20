@@ -7,6 +7,7 @@ const playerScoreText = document.querySelector("#human-player .score-box");
 const computerScoreText = document.querySelector("#pc-player .score-box");
 const tiesText = document.querySelector("#ties-text .ties-score");
 const finalscore = document.querySelector("#final-score");
+const gamestats = document.querySelector("#gameStats-container")
 
 let round = 0;
 let ties = 0;
@@ -29,6 +30,7 @@ const computerPlay = function(){
 
 const playRound = function(playerSelection, computerSelection) {
   let result;
+
   round++;
   roundText.textContent = `round: ${round}`;
 
@@ -65,25 +67,32 @@ const playRound = function(playerSelection, computerSelection) {
     resultsText.textContent = `it's a tie!`;
     console.log(ties)
   }
-
+  // var userChoice = choice.id;
   if(result === "win"){
-    resultsText.textContent = `you win!, ${playerSelection} beats ${computerSelection}`;
+
+    resultsText.style.color="black ";
+    gamestats.style.background="linear-gradient(green, #016c)";
+    setTimeout(function(){gamestats.style.background ="";},1000);
+    resultsText.textContent = `YOU WIN!, ${playerSelection} BEATS ${computerSelection}`;
     playerPoints++;
     playerScoreText.textContent = `${playerPoints} `;
   }
 
   if(result === "lose"){
-    resultsText.textContent = `you lose!, ${computerSelection} beats ${playerSelection}`;
+    resultsText.style.color="black";
+    gamestats.style.background="linear-gradient(firebrick, #016c)";
+    setTimeout(function(){gamestats.style.background ="";},1000);
+    resultsText.textContent = `YOU LOSE!, ${computerSelection} BEATS ${playerSelection}`;
     computerPoints++;
     computerScoreText.textContent = `${computerPoints} `;
   }
   if(playerPoints == 5){
     finalscore.textContent = `Total Rounds: ${round}, Ties: ${ties} YOU WIN. Congratulations!`
-    resetScore();
+    // resetScore();
   }
   if(computerPoints == 5){
     finalscore.textContent = `Total Rounds: ${round}, Ties: ${ties} SORRY - YOU LOSE. Hard Luck`;
-    resetScore();
+    // playRound(playerSelection, computerSelection)
   }
 
   function resetScore(){
