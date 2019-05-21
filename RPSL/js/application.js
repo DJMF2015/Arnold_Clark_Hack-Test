@@ -31,8 +31,8 @@ const computerPlay = function(){
 const playRound = function(playerSelection, computerSelection) {
   let result;
   round++;
-  roundText.textContent = `round: ${round}`;
-  playerSelectionText.textContent = `you selected ${playerSelection}`;
+  roundText.textContent = `Round: ${round}`;
+  playerSelectionText.textContent = `You Selected ${playerSelection}`;
 
   if (playerSelection === computerSelection ){
     result = "tie";
@@ -68,7 +68,7 @@ const playRound = function(playerSelection, computerSelection) {
 
   if(result === "win"){
     resultsText.style.color="black ";
-    gamestats.style.background="linear-gradient(green, #016c)";
+    gamestats.style.background="linear-gradient(white, #016c)";
     setTimeout(function(){gamestats.style.background ="";},1000);
     resultsText.textContent = `YOU WIN!, ${playerSelection} BEATS ${computerSelection}`;
     playerPoints++;
@@ -77,35 +77,35 @@ const playRound = function(playerSelection, computerSelection) {
 
   if(result === "lose"){
     resultsText.style.color="black";
-    gamestats.style.background="linear-gradient(firebrick, #016c)";
+    gamestats.style.background="linear-gradient(red, #016c)";
     setTimeout(function(){gamestats.style.background ="";},1000);
     resultsText.textContent = `YOU LOSE!, ${computerSelection} BEATS ${playerSelection}`;
     computerPoints++;
     computerScoreText.textContent = `${computerPoints} `;
   }
   if(playerPoints == 5){
-    finalscore.textContent = `Total Rounds: ${round}, Ties: ${ties} YOU WIN. Congratulations!`
-    // resetScore();
+    finalscore.textContent = `Total Rounds: ${round} Ties: ${ties} YOU WIN.`
+    // alert(`Total Rounds: ${round}, Ties: ${ties} YOU WIN. Congratulations!`);
+    resetScore();
   }
   if(computerPoints == 5){
-    finalscore.textContent = `Total Rounds: ${round}, Ties: ${ties} SORRY - YOU LOSE. Hard Luck`;
-    // playRound(playerSelection, computerSelection)
+    prompt(`Total Rounds: ${round}, Ties: ${ties} SORRY - YOU LOSE. Hard Luck`);
+    resetScore();
   }
+}
 
-  function resetScore(){
-    round = 0;
-    ties = 0;
-    computerPoints = 0;
-    playerPoints = 0;
-    // roundText.textContent = `round: ${round}`;
-    // playerScoreText.textContent = `${playerPoints}`;
-    computerScoreText.textContent = `${computerPoints}`;
-    resultsText.textContent = ``;
-    playerSelectionText.textContent = ``;
-    computerSelectionText.textContent = ``;
-
-  }
-
-
+function resetScore(){
+  round = 0;
+  ties = 0;
+  computerPoints = 0;
+  playerPoints = 0;
+  roundText.textContent = `Rounds: ${round}`;
+  playerScoreText.textContent = `${playerPoints}`;
+  computerScoreText.textContent = `${computerPoints}`;
+  resultsText.textContent = ``;
+  playerSelectionText.textContent = ``;
+  computerSelectionText.textContent = ``;
 
 }
+
+// }
