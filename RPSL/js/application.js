@@ -8,6 +8,7 @@ const computerScoreText = document.querySelector("#pc-player .score-box");
 const tiesText = document.querySelector("#ties-text .ties-score");
 const finalscore = document.querySelector("#final-score");
 const gamestats = document.querySelector("#gameStats-container")
+// const section = document.querySelector("#player ")
 
 let round = 0;
 let ties = 0;
@@ -89,7 +90,7 @@ const playRound = function(playerSelection, computerSelection) {
     resetScore();
   }
   if(computerPoints == 5){
-    prompt(`Total Rounds: ${round}, Ties: ${ties} SORRY - YOU LOSE. Hard Luck`);
+  finalscore.textContent = `Total Rounds: ${round}, Ties: ${ties} SORRY - YOU LOSE. Hard Luck`;
     resetScore();
   }
 }

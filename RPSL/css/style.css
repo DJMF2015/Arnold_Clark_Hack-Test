@@ -22,13 +22,13 @@ body {
   font-size: 20px;
   font-style: sans-serif;
   background: linear-gradient(green, #06c);
-  height: 100vh;
-  border: 10px solid #72cbcb;
+  height: 115vh;
+  /* border: 10px solid #72cbcb; */
 
 }
-p{
+/* p{
   margin: 15px;
-}
+} */
 /*header*/
 header {
   margin: 10px;
@@ -61,20 +61,23 @@ header {
 #gameStats-container{
   text-align: center;
 }
-.player-box{
+ .player-box{
   width: 400px;
   height: 200px;
-  display: inline-block;
+  display: inline;
 }
 #human-player{
   clear: both;
   color: rgba(255, 255, 255, 0.92);
   font-weight: bold;
+
 }
 #pc-player{
   clear: both;
   color: rgba(255, 255, 255, 0.92);
   font-weight: bold;
+  
+
 }
 .score-box{
   font-size: 60px;
@@ -86,17 +89,29 @@ header {
 #results-container{
   text-align: center;
 }
-
-.btnImg {
-  display:inline-flex;
-  margin:0;
-  border:0;
-  padding-left: 25%;
-  padding-right: 25%;
-  padding-top: 10%;
-  flex-wrap: wrap;
+/* #section {
+  /* margin: 0 1.5%; */
+}
+ #human {
+  float: left;
 
 }
+#computer{
+  float:  right;
+
+
+}
+
+/* .btnImg {
+display:inline-flex;
+margin:0;
+border:0;
+padding-left: 25%;
+padding-right: 25%;
+padding-top: 10%;
+flex-wrap: wrap;
+
+} */
 
 #scissors > img{
   margin: 5%;
