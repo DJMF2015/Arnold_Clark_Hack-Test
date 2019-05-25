@@ -3,7 +3,7 @@
 	var computerSelection;
 	var playerSelection;
 	function computerPlay(){
-		var hand = ["rock" , "paper" , "scissors, izard, spock"];
+		var hand = ["rock" , "paper" , "scissors, lizard, spock"];
 		var randomIndex = Math.floor(Math.random() * 3);
 		return hand[randomIndex];
 	}
@@ -52,6 +52,20 @@
 			} default:
 			alert('Please enter rock, paper or scissors only! ');
 		}
+		case 'lizard':
+		if (computerSelection === 'rock'){
+			++playerPoints;
+			return "<br>Great job! "+ "<br>" + "You win playing <br>" + playerSelection ;
+		} else if ( computerSelection === 'scissors'){
+			++compPoints;
+			return "<br>computer wins playing " + computerSelection;
+		}else {
+			++ties;
+			return "<br>Draw!" ;
+			break;
+		} default:
+		alert('Please enter rock, paper or scissors only! ');
+	}
 	}
 	function checkScore(){
 		if (playerPoints === compPoints){
