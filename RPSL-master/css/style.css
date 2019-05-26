@@ -19,6 +19,10 @@ body {
   background: linear-gradient(green, #06c);
   height: 120vh;
   border: 2px solid #72cbcb;
+  font-family: 'Source Sans Pro', Arial, sans-serif;
+  line-height: 1.45;;
+  color: #333;
+  padding: 1em;
 
 }
 
@@ -76,7 +80,7 @@ header {
   font-size: 26px;
 }
 .score-box{
-  font-size: 70px;
+  font-size: 60px;
   width: 180px;
   margin: 0 auto;
   border: 3px double black;
@@ -86,7 +90,7 @@ header {
 /*main results-container*/
 #results-container{
   text-align: center;
-  font-size: 24px;
+  font-size: 28px;
   font-weight: bold;
   color: black;
   padding-left: 15px;

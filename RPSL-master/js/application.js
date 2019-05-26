@@ -14,28 +14,15 @@ let ties = 0;
 let computerPoints = 0;
 let playerPoints = 0;
 
-const computerPlay = function(){
-  let hand = {
-    0: "paper",
-    1 : "rock",
-    2 : "scissors",
-    3 : "lizard",
-    4 : "spock"
-  };
-
-  const randomIndex = Math.floor(Math.random() * 4);
-  return hand[randomIndex];
-}
-
 const playRound = function(playerSelection, computerSelection) {
   finalscore.textContent = ''
   let result;
   round++;
-  roundText.textContent = `Round: ${round}`;
-  // playerSelectionText.textContent = `You Selected ${playerSelection}`;
+  roundText.textContent = `ROUND: ${round}`;
 
   if (playerSelection === computerSelection ){
     result = "tie";
+    resultsText.textContent = `TIE`;
     ties++;
   }
   else if (playerSelection === computerSelection === "paper"
@@ -55,11 +42,6 @@ const playRound = function(playerSelection, computerSelection) {
     lose()
   }
 
-  if(result === "tie"){
-    resultsText.textContent = `TIE`;
-    console.log(ties)
-  }
-
   function win(){
     if(playerPoints == 5){
       finalscore.textContent = `TOTAL ROUNDS: ${round} TIES: ${ties} YOU WIN!: ${playerPoints} COMPUTER: ${computerPoints} `
@@ -67,7 +49,7 @@ const playRound = function(playerSelection, computerSelection) {
       resetScore();
     } else {
       resultsText.style.color="black ";
-      resultsText.style.opacity = 1;
+      resultsText.style.opacity = 2;
       gamestats.style.background="linear-gradient(white, #016c)";
       setTimeout(function(){gamestats.style.background ="";},1250);
       resultsText.textContent = `YOU: ${playerSelection} BEATS ${computerSelection}`;
@@ -96,9 +78,9 @@ const playRound = function(playerSelection, computerSelection) {
     ties = 0;
     computerPoints = 0;
     playerPoints = 0;
-    roundText.textContent = `Rounds: ${round}`;
-    playerScoreText.textContent = `${playerPoints}`;
-    computerScoreText.textContent = `${computerPoints}`;
+    // roundText.textContent = `Rounds: ${round}`;
+    // playerScoreText.textContent = `${playerPoints}`;
+    // computerScoreText.textContent = `${computerPoints}`;
     resultsText.textContent = ``
     playerSelectionText.textContent = ``;
     computerSelectionText.textContent = ``;
