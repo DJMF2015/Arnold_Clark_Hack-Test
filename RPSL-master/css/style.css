@@ -27,6 +27,7 @@ header {
   margin: 10px;
   text-align: center;
 }
+
 /*main*/
 /*main moves-container*/
 #moves-container{
@@ -54,7 +55,7 @@ header {
 #gameStats-container{
   text-align: center;
 }
- .player-box{
+.player-box{
   width: 400px;
   height: 200px;
   display: inline;
@@ -69,11 +70,9 @@ header {
   clear: both;
   color: rgba(255, 255, 255, 0.92);
   font-weight: bold;
-
-
 }
 #final-score{
-font-family: monospace;
+  font-family: monospace;
   font-size: 26px;
 }
 .score-box{
@@ -81,7 +80,8 @@ font-family: monospace;
   width: 180px;
   margin: 0 auto;
   border: 3px double black;
-  /* color: darkgreen */
+  padding-left: 55px;
+  padding-right:55px;
 }
 /*main results-container*/
 #results-container{
@@ -89,12 +89,10 @@ font-family: monospace;
   font-size: 24px;
   font-weight: bold;
   color: black;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
-}
-h1{
-  color: red;
-}
 #scissors > img{
   margin: 5%;
 

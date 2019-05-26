@@ -32,7 +32,7 @@ const playRound = function(playerSelection, computerSelection) {
   let result;
   round++;
   roundText.textContent = `Round: ${round}`;
-  // playerSelectionText.textContent = `You Selected ${playerSelection}`;
+  playerSelectionText.textContent = `You Selected ${playerSelection}`;
 
   if (playerSelection === computerSelection ){
     result = "tie";
