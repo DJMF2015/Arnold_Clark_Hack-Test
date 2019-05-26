@@ -13,7 +13,6 @@ let round = 0;
 let ties = 0;
 let computerPoints = 0;
 let playerPoints = 0;
-
 const playRound = function(playerSelection, computerSelection) {
   finalscore.textContent = ''
   let result;
@@ -25,7 +24,8 @@ const playRound = function(playerSelection, computerSelection) {
     resultsText.textContent = `TIE`;
     ties++;
   }
-  else if (playerSelection === computerSelection === "paper"
+  else if 
+  (playerSelection === computerSelection === "paper"
   || playerSelection === "paper" && computerSelection === "rock" ||
   playerSelection === "rock" && computerSelection === "lizard" ||
   playerSelection === "lizard" && computerSelection === "spock" ||
@@ -39,37 +39,37 @@ const playRound = function(playerSelection, computerSelection) {
     win()
   } else  {
     computerPoints++;
+    resultsText.textContent = `LOSE! Computer: ${computerSelection} BEATS ${playerSelection}`;
     lose()
   }
 
   function win(){
-    if(playerPoints == 5){
+    if(playerPoints === 5){
       finalscore.textContent = `TOTAL ROUNDS: ${round} TIES: ${ties} YOU WIN!: ${playerPoints} COMPUTER: ${computerPoints} `
       finalscore.style.color="lightgreen ";
       resetScore();
     } else {
-      resultsText.style.color="black ";
-      resultsText.style.opacity = 2;
-      gamestats.style.background="linear-gradient(white, #016c)";
+      resultsText.style.color="blue ";
+      resultsText.style.opacity = 1;
+      gamestats.style.background="linear-gradient(white, #019c)";
       setTimeout(function(){gamestats.style.background ="";},1250);
-      resultsText.textContent = `YOU: ${playerSelection} BEATS ${computerSelection}`;
+      resultsText.textContent = `WIN: ${playerSelection} BEATS ${computerSelection}`;
       playerScoreText.textContent = `${playerPoints} `;
     }
   }
 
   function lose(){
-    if(computerPoints == 5){
+    if(computerPoints === 5){
       finalscore.textContent = `TOTAL ROUNDS: ${round}, TIES: ${ties}
       YOU LOSE: PLAYER: ${playerPoints} COMPUTER: ${computerPoints}`;
       finalscore.style.color="red";
       resetScore();
     } else {
+      computerScoreText.textContent = `${computerPoints} `;
       resultsText.style.color="black";
-      resultsText.style.opacity = -1;
+      resultsText.style.opacity = 1;
       gamestats.style.background="linear-gradient(red, #016c)";
       setTimeout(function(){gamestats.style.background ="";},1250);
-      resultsText.textContent = `Computer: ${computerSelection} BEATS ${playerSelection}`;
-      computerScoreText.textContent = `${computerPoints} `;
     }
   }
 
@@ -78,9 +78,9 @@ const playRound = function(playerSelection, computerSelection) {
     ties = 0;
     computerPoints = 0;
     playerPoints = 0;
-    // roundText.textContent = `Rounds: ${round}`;
-    // playerScoreText.textContent = `${playerPoints}`;
-    // computerScoreText.textContent = `${computerPoints}`;
+    roundText.textContent = `Rounds: ${round}`;
+    playerScoreText.textContent = `${playerPoints}`;
+    computerScoreText.textContent = `${computerPoints}`;
     resultsText.textContent = ``
     playerSelectionText.textContent = ``;
     computerSelectionText.textContent = ``;
