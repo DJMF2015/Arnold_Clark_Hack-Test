@@ -1,7 +1,7 @@
 ## Arnold Clark Hack Day Test
-#### The task
 
 ##### We need you to develop a Rock, Paper, Scissors, Lizard, Spock game.
+
 What the trek?! Don’t worry, it’s an expansion on the classic, made popular by
 The Big Bang Theory, just a few additional rules;
 
@@ -17,6 +17,7 @@ The Big Bang Theory, just a few additional rules;
 (and as it always has...)
 * Rock crushes Scissors
 
+![alt text](rpsls.png 'height=20px ' )
 
 NOTE: The first to score a total of 5 points (computer or player) is the overall winner of the game
 
