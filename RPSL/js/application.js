@@ -24,12 +24,11 @@ const computerPlay = function(){
   };
 
   const randomIndex = Math.floor(Math.random() * 4);
-  // console.log(hand[randomIndex])
   return hand[randomIndex];
 }
 
 const playRound = function(playerSelection, computerSelection) {
-  // finalscore.textContent = ''
+  finalscore.textContent = ''
   let result;
   round++;
   roundText.textContent = `Round: ${round}`;
@@ -64,14 +63,14 @@ const playRound = function(playerSelection, computerSelection) {
   function win(){
     if(playerPoints == 5){
       finalscore.textContent = `TOTAL ROUNDS: ${round} TIES: ${ties} YOU WIN!: ${playerPoints} COMPUTER: ${computerPoints} `
-      finalscore.style.color="blue ";
+      finalscore.style.color="lightgreen ";
       resetScore();
     } else {
       resultsText.style.color="black ";
       resultsText.style.opacity = 1;
       gamestats.style.background="linear-gradient(white, #016c)";
       setTimeout(function(){gamestats.style.background ="";},1250);
-      resultsText.textContent = `YOU WIN! ${playerSelection} BEATS ${computerSelection}`;
+      resultsText.textContent = `YOU: ${playerSelection} BEATS ${computerSelection}`;
       playerScoreText.textContent = `${playerPoints} `;
     }
   }
@@ -87,21 +86,22 @@ const playRound = function(playerSelection, computerSelection) {
       resultsText.style.opacity = -1;
       gamestats.style.background="linear-gradient(red, #016c)";
       setTimeout(function(){gamestats.style.background ="";},1250);
-      resultsText.textContent = `YOU LOSE! ${computerSelection} BEATS ${playerSelection}`;
+      resultsText.textContent = `Computer: ${computerSelection} BEATS ${playerSelection}`;
       computerScoreText.textContent = `${computerPoints} `;
     }
   }
-}
 
-function resetScore(){
-  round = 0;
-  ties = 0;
-  computerPoints = 0;
-  playerPoints = 0;
-  roundText.textContent = `Rounds: ${round}`;
-  playerScoreText.textContent = `${playerPoints}`;
-  computerScoreText.textContent = `${computerPoints}`;
-  resultsText.textContent = ``
-  playerSelectionText.textContent = ``;
-  computerSelectionText.textContent = ``;
+  function resetScore(){
+    round = 0;
+    ties = 0;
+    computerPoints = 0;
+    playerPoints = 0;
+    roundText.textContent = `Rounds: ${round}`;
+    playerScoreText.textContent = `${playerPoints}`;
+    computerScoreText.textContent = `${computerPoints}`;
+    resultsText.textContent = ``
+    playerSelectionText.textContent = ``;
+    computerSelectionText.textContent = ``;
+  }
+
 }

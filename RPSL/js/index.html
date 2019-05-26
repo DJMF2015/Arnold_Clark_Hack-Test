@@ -16,41 +16,39 @@
 
     <main>
       <div p id = "green-text">
-      <ul id="choices">
-        <div id="hands" aria-live="polite" aria-busy="true"></div>
+        <ul id="choices">
+          <div id="hands" aria-live="polite" aria-busy="true"></div>
 
-        <section id="moves-container">
-          <div class="move-box"><input type="image" name="rock" src="../images/rock.png" width="150" height="150" alt="rock"></div>
-          <div class="move-box"><input type="image" name="paper" src="../images/paper.png" width="150" height="150" alt="paper"></div>
-          <div class="move-box"><input type="image" name= "scissors" src="../images/scissors.png" width="150" height="150" alt="scissors"></div>
-          <div class="move-box"><input type="image" name= "spock" src="../images/spock.png" width="140" height="140" alt="spock"></div>
-          <div class="move-box"><input type="image" name= "lizard" src="../images/lizard.png" width="150" height="150" alt="lizard"></div>
-        </section>
-      </ul>
-      <section id="results-container"></section>
-    <div id ="final-score"></div>
-      <!-- <section id="gameStats-container"> -->
-      <h3 id="round">Round:</h3>
-      <section id ="human"></section>
-      <div class="human-box" id="human-player">
-        <p>You:</p>
-        <div class="score-box">0</div>
+          <section id="moves-container">
+            <div class="move-box"><input type="image" name="rock" src="../images/rock.png" width="150" height="150" alt="rock"></div>
+            <div class="move-box"><input type="image" name="paper" src="../images/paper.png" width="150" height="150" alt="paper"></div>
+            <div class="move-box"><input type="image" name= "scissors" src="../images/scissors.png" width="150" height="150" alt="scissors"></div>
+            <div class="move-box"><input type="image" name= "spock" src="../images/spock.png" width="140" height="140" alt="spock"></div>
+            <div class="move-box"><input type="image" name= "lizard" src="../images/lizard.png" width="150" height="150" alt="lizard"></div>
+          </section>
+        </ul>
+        <section id="results-container"></section>
         <div id ="final-score"></div>
-        <p id="player-selection"></p>
-      </div>
-      <div class="player-box" id="pc-player">
-        <p>Computer Player :</p>
-        <section id ="computer"></section>
-        <div id = "ties-text"></div>
+        <h3 id="round">Round:</h3>
+        <section id ="human"></section>
+        <div class="human-box" id="human-player">
+          <p>You:</p>
+          <div class="score-box">0</div>
+          <div id ="final-score"></div>
+          <p id="player-selection"></p>
+        </div>
+        <div class="player-box" id="pc-player">
+          <p>Computer Player :</p>
+          <section id ="computer"></section>
+          <div id = "ties-text"></div>
+          <div class="score-box">0</div>
 
-        <div class="score-box">0</div>
+          <p id="computer-selection"></p>
+        </div>
+      </section>
 
-        <p id="computer-selection"></p>
-      </div>
-    </section>
-
-  </main>
-  <!-- Load in the data -->
-  <script src="application.js"></script>
-  <script src="app.js"></script>
-</body>
+    </main>
+    <!-- Load in the data -->
+    <script src="application.js"></script>
+    <script src="app.js"></script>
+  </body>

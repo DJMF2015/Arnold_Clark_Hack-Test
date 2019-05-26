@@ -72,24 +72,24 @@ header {
 
 
 }
+#final-score{
+font-family: monospace;
+  font-size: 26px;
+}
 .score-box{
   font-size: 70px;
   width: 180px;
   margin: 0 auto;
   border: 3px double black;
+  /* color: darkgreen */
 }
 /*main results-container*/
 #results-container{
   text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: black;
 }
-
-}
- #human {
-  /* float: left; */
-
-}
-#computer{
-  /* float:  right; */
 
 }
 h1{
